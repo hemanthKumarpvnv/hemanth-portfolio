@@ -1,0 +1,13 @@
+﻿<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6e88" />
+      <stop offset="100%" stop-color="#b16cff" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="40" fill="url(#g)" />
+  <circle cx="160" cy="120" r="70" fill="rgba(255,255,255,0.4)" />
+  <rect x="60" y="210" width="200" height="70" rx="20" fill="rgba(255,255,255,0.35)" />
+  <text x="160" y="130" font-size="48" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif">HK</text>
+  <text x="160" y="255" font-size="24" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif">Angular</text>
+</svg>
