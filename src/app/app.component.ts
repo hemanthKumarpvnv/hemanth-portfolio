@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     const title = `${this.resume.name} · ${this.resume.title}`;
     const description = this.resume.summary[0] ?? 'Enterprise Angular engineer delivering high-performance web apps.';
     const keywords = this.resume.skills.join(', ');
-    const imageUrl = `${this.siteUrl}assets/Hemanth_Image.jpeg`;
+    const imageUrl = `${this.siteUrl}assets/Hemanth_kumar.png`;
 
     this.titleService.setTitle(title);
     this.metaService.updateTag({ name: 'description', content: description });

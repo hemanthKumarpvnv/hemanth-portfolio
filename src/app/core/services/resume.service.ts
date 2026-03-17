@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Resume } from '../models/resume.model';
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +15,7 @@ export class ResumeService {
       languages: ['English', 'Telugu', 'Hindi'],
       github: 'https://github.com/hemanthkumar',
       portfolio: 'https://hemanth-portfolio.com',
-      profileImage: './assets/Hemanth_Image.jpeg',
+      profileImage: 'assets/Hemanth_kumar.png',
 
       summary: [
         'Senior Frontend Engineer with 6+ years of experience building scalable Single Page Applications using Angular (2-18), TypeScript, and modern frontend architecture.',
@@ -125,7 +125,7 @@ export class ResumeService {
 
       highlights: [
         '6+ Years Building Scalable Enterprise Angular Applications',
-        'AngularJS → Angular Modernization & Migration Specialist',
+        'AngularJS ? Angular Modernization & Migration Specialist',
         'RxJS, NgRx & Angular Signals Performance Optimization',
         'Angular Material'
       ],
