@@ -1,26 +1,110 @@
-﻿.timeline {
+﻿@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes timelineGlow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 61, 130, 0.2), 0 0 20px rgba(0, 61, 130, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+}
+
+.timeline {
   display: grid;
   gap: 1rem;
 }
 
 .timeline-item {
   padding: 1rem 1.25rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  background: rgba(79, 172, 254, 0.04);
   display: flex;
   gap: 1rem;
   align-items: center;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInLeft 0.6s ease-out backwards, timelineGlow 4s ease-in-out 0.6s infinite;
+  position: relative;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s, 0.6s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s, 0.6s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s, 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s, 0.6s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s, 0.6s; }
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 0%;
+  background: rgba(59, 130, 246, 0.6);
+  transform: translateY(-50%);
+  transition: height 0.4s ease;
+}
+
+.timeline-item:hover::before {
+  height: 100%;
+}
+
+.timeline-item:hover {
+  transform: translateX(8px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 16px 36px rgba(0, 61, 130, 0.25), inset 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.timeline-item:active {
+  transform: translateX(4px);
 }
 
 .timeline-year {
   font-weight: 600;
-  color: #7bcfff;
+  color: #3b82f6;
   font-size: 1rem;
   min-width: 90px;
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.timeline-item:hover .timeline-year {
+  color: #fff;
+  background: rgba(59, 130, 246, 0.35);
+  transform: scale(1.1);
 }
 
 .timeline-item p {
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover p {
+  color: rgba(255, 255, 255, 0.95);
 }

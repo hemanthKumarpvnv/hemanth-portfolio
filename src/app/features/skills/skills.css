@@ -1,4 +1,33 @@
-﻿.skills-list {
+﻿@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillGlow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 0 0 rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 20px rgba(0, 61, 130, 0.2), inset 0 0 15px rgba(59, 130, 246, 0.15);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
@@ -8,13 +37,37 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(79, 172, 254, 0.06));
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: fadeInUp 0.5s ease-out backwards, skillGlow 3s ease-in-out 0.5s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-pill:nth-child(1) { animation-delay: 0.05s; }
+.skill-pill:nth-child(2) { animation-delay: 0.1s; }
+.skill-pill:nth-child(3) { animation-delay: 0.15s; }
+.skill-pill:nth-child(4) { animation-delay: 0.2s; }
+.skill-pill:nth-child(5) { animation-delay: 0.25s; }
+.skill-pill:nth-child(6) { animation-delay: 0.3s; }
+.skill-pill:nth-child(7) { animation-delay: 0.35s; }
+.skill-pill:nth-child(8) { animation-delay: 0.4s; }
+
+.skill-pill:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(79, 172, 254, 0.18));
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-6px) scale(1.08) rotateX(5deg);
+  box-shadow: 0 14px 32px rgba(0, 61, 130, 0.35), inset 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.skill-pill:active {
+  transform: translateY(-3px) scale(1.04);
 }
 
 .skill-icon {
@@ -24,5 +77,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover .skill-icon {
+  background: rgba(59, 130, 246, 0.4);
+  transform: rotate(10deg) scale(1.1);
 }

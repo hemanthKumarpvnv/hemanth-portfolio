@@ -1,12 +1,39 @@
-﻿.performance-list {
+﻿@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.performance-list {
   margin: 0;
   padding-left: 1.2rem;
   display: grid;
   gap: 0.45rem;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .performance-list li {
   list-style: disc;
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0.4rem;
+}
+
+.performance-list li:nth-child(1) { animation: fadeInUp 0.5s ease-out 0.05s backwards; }
+.performance-list li:nth-child(2) { animation: fadeInUp 0.5s ease-out 0.1s backwards; }
+.performance-list li:nth-child(3) { animation: fadeInUp 0.5s ease-out 0.15s backwards; }
+.performance-list li:nth-child(4) { animation: fadeInUp 0.5s ease-out 0.2s backwards; }
+.performance-list li:nth-child(5) { animation: fadeInUp 0.5s ease-out 0.25s backwards; }
+
+.performance-list li:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: translateX(4px);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
 }

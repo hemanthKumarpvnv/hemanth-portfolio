@@ -1,4 +1,15 @@
-﻿.summary-grid {
+﻿@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
@@ -9,4 +20,25 @@
   font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out backwards;
+  padding: 1.2rem;
+  border-radius: 10px;
+  background: rgba(79, 172, 254, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.summary-grid p:nth-child(1) { animation-delay: 0.1s; }
+.summary-grid p:nth-child(2) { animation-delay: 0.2s; }
+.summary-grid p:nth-child(3) { animation-delay: 0.3s; }
+
+.summary-grid p:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 61, 130, 0.2);
+}
+
+.summary-grid p:active {
+  transform: translateY(-2px);
 }
