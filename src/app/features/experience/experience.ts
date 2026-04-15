@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgClass } from '@angular/common';
 import { Experience } from '../../core/models/resume.model';
 import { SectionTitleComponent } from '../../shared/components/section-title/section-title';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [NgFor, SectionTitleComponent],
+  imports: [NgFor, NgClass, SectionTitleComponent],
   templateUrl: './experience.html',
   styleUrls: ['./experience.css']
 })

@@ -4,17 +4,28 @@
     subtitle="Delivery on complex programs"
   ></app-section-title>
 
-  <article *ngFor="let exp of experience" class="experience-card">
-    <div class="experience-header">
-      <div>
-        <h3>{{ exp.project }}</h3>
-        <p>{{ exp.role }}</p>
+  <div class="roadmap-timeline">
+    <div class="timeline-line"></div>
+    
+    <article *ngFor="let exp of experience; let i = index" 
+             [ngClass]="{'right-side': i % 2 === 0, 'left-side': i % 2 === 1}" 
+             class="experience-card roadmap-card">
+      
+      <div class="timeline-node">
+        <div class="node-dot"></div>
       </div>
-    </div>
-    <ul>
-      <li *ngFor="let item of exp.description">
-        {{ item }}
-      </li>
-    </ul>
-  </article>
+
+      <div class="experience-content">
+        <div class="experience-header">
+          <h3>{{ exp.project }}</h3>
+          <p class="experience-role">{{ exp.role }}</p>
+        </div>
+        <ul class="description-list">
+          <li *ngFor="let item of exp.description">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>
 </section>
