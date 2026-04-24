@@ -125,7 +125,7 @@ export class ResumeService {
 
       highlights: [
         '6+ Years Building Scalable Enterprise Angular Applications',
-        'AngularJS ? Angular Modernization & Migration Specialist',
+        'AngularJS, Angular Modernization & Migration Specialist',
         'RxJS, NgRx & Angular Signals Performance Optimization',
         'Angular Material'
       ],
